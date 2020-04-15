@@ -31,7 +31,12 @@ if (isatty(STDERR_FILENO))
 _print("\n");
 exit(0);
 }
-
+if (_stroc(' ', buffer) == _strlen(buffer) - 1)
+{
+free(buffer);
+buffer = NULL;
+return (prompt());
+}
 return (buffer);
 }
 /**
