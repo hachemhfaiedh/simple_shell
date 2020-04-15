@@ -19,11 +19,6 @@ char **parse_line(char *);
 extern char **environ;
 char *find_env(char *glovar);
 void sig(int sig_num);
-char *_strdup(char *str);
-char *concat_all(char *name, char *sep, char *value);
-int _strlen(char *s);
-list_path *add_node_end(list_path **head, char *str);
-list_path *linkpath(char *path);
-char *_which(char *filename, list_path *head);
-void free_list(list_path *head);
+
+
 #endif
