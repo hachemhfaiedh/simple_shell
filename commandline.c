@@ -28,9 +28,13 @@ return (lin);
 char **parse_line(char *buffer)
 {
 	char *token;
-	int i = 0, j = 0, size = 1024;
+	int i = 0;
 	char **array;
 
+	array = malloc(64);
+	if (array == NULL)
+		return (NULL);
+	*array = NULL;
 	token = strtok(buffer, DEL);
 	while (token)
 	{
@@ -38,7 +42,7 @@ char **parse_line(char *buffer)
 		i++;
 		token = strtok(NULL, DEL);
 	}
-	if (!token && !*array)
+	if (!token && !(*array))
 	{
 		free(array);
 		free(token);
