@@ -19,7 +19,7 @@ void sig(int sig_num)
 char *read_line(void)
 {
 char *buffer = NULL;
-size_t buffsize = 0;
+size_t buffsize = 1024;
 ssize_t  lin;
 
 lin = getline(&buffer, &buffsize, stdin);
@@ -27,8 +27,6 @@ if (lin == -1)
 {
 free(buffer);
 buffer = NULL;
-if (isatty(STDERR_FILENO))
-_print("\n");
 }
 return (buffer);
 }
