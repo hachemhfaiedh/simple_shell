@@ -85,7 +85,6 @@ _print("#cisfun$ ");
 buff = read_line();
 a = parse_line(buff);
 free(buff);
-buff = NULL;
 free(a);
 }
 return (0);
