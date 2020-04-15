@@ -18,5 +18,6 @@ char *read_line(void);
 char **parse_line(char *);
 extern char **environ;
 char *find_env(char *glovar);
+void sig(int sig_num);
 
 #endif
