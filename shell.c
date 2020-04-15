@@ -1,5 +1,5 @@
 #include "shell.h"
-#define DEL "\n\t\a\r"
+#define DEL "\n\t\a\r\v"
 /**
  * sig - checks if Ctrl C is pressed
  * @sig_num: int
