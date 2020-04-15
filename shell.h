@@ -14,7 +14,7 @@
 int _putchar(char c);
 int _print(char *str);
 int main(void);
-int read_line(void);
+char *read_line(void);
 char **parse_line(char *);
 extern char **environ;
 char find_env(char **glovar);
