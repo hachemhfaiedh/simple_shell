@@ -18,7 +18,6 @@ free(buffer);
 buffer = NULL;
 if (isatty(STDERR_FILENO))
 _print("\n");
-exit(0);
 }
 return (buffer);
 }
