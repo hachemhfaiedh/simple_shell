@@ -1,0 +1,25 @@
+.TH SIMPLE_SHELL "15 April 2020" "simple_shell man page"
+.SH NAME
+.B simple_shell
+
+.SH SYNOPSIS
+$ [command] [arguments]
+
+.SH DESCRIPTION
+As the name suggests we created a simple UNIX command interpreter.
+
+.SH BUILT-INS
+.B glovar
+- prints the current environment.
+.br
+.B exit
+- exits the prompt.
+
+.SH OPTIONS
+Simple_shell does not take any options.
+
+.SH BUGS
+No known bugs.
+
+.SH AUTHOR
+Hachem Hfaiedh, Imen Ayari
