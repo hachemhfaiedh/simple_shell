@@ -51,7 +51,7 @@ char **parse_line(char *buffer)
 		return (NULL);
 	*array = NULL;
 	token = strtok(buffer, DEL);
-	while (token)
+	while (token != NULL)
 	{
 		array[i] = token;
 		i++;
