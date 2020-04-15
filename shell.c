@@ -1,6 +1,16 @@
 #include "shell.h"
 #define DEL "\n\t\a\r"
-
+/**
+ * sig - checks if Ctrl C is pressed
+ * @sig_num: int
+ */
+void sig(int sig_num)
+{
+	if (sig_num == SIGINT)
+	{
+		_print("\n#cisfun$ ");
+	}
+}
 /**
  *read_line - a funtioch that reads the input line after prompt
  *
@@ -9,8 +19,9 @@
 char *read_line(void)
 {
 char *buffer = NULL;
-size_t buffsize = 1024;
+size_t buffsize = 0;
 ssize_t  lin;
+
 lin = getline(&buffer, &buffsize, stdin);
 if (lin == -1)
 {
