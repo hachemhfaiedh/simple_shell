@@ -30,44 +30,29 @@ return (buffer);
  */
 char **parse_line(char *buffer)
 {
-char *s;
-int i = 0, j = 0, lenth = 0;
-char **array;
-s = strtok(buffer, DEL);
-while (buffer[i])
-{
-if (buffer[i] != ' ')
-{
-lenth++;
-while (buffer[i] != ' ' && buffer[i] != '\0')
-i++;
-}
-else
-i++;
-}
-array = malloc(sizeof(char *) * lenth + 1);
-if (!array)
-exit(EXIT_FAILURE);
-while (s)
-{
-array[j] = s;
-j++;
-s = strtok(NULL, "\n");
-}
-array[j] = NULL;
-return (array);
-}
+	char *token;
+	int i = 0;
+	char **array;
 
-/**
- * sig - checks if Ctrl C is pressed
- * @sig_num: int
- */
-void sig(int sig_num)
-{
-if (sig_num == SIGINT)
-{
-_print("\n#cisfun$ ");
-}
+	array = malloc(sizeof(char *) * 64);
+	if (array == NULL)
+		return (NULL);
+	*array = NULL;
+	token = strtok(buffer, DEL);
+	while (token)
+	{
+		array[i] = token;
+		i++;
+		token = strtok(NULL, DEL);
+	}
+	if (!token && !(*array))
+	{
+		free(array);
+		free(token);
+		return (NULL);
+	}
+	array[i] = NULL;
+	return (array);
 }
 
 
@@ -81,18 +66,16 @@ _print("\n#cisfun$ ");
 int main(void)
 {
 char **a;
-char *buffer;
-char *envp[] = {(char *) "PATH=/bin", 0};
-signal(SIGINT, sig);
+char *buff = NULL;
 while (1)
 {
 if (isatty(0))
 _print("#cisfun$ ");
-read_line();
-parse_line(buffer);
-if (fork() != 0)
-wait(NULL);
-exceve();
-free(buffer);
+buff = read_line();
+a = parse_line(buff);
+free(buff);
+buff = NULL;
+free(a);
+}
 return (0);
 }
