@@ -26,7 +26,7 @@ char *find_env(char *glovar)
 			if (glovar[j] == '\0')
 			{
 				r = (environ[i] + j + 1);
-				return (a);
+				return (r);
 			}
 		}
 	}
