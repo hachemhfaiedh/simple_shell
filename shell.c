@@ -85,7 +85,12 @@ _print("#cisfun$ ");
 buff = read_line();
 a = parse_line(buff);
 if (a == NULL || *a == NULL)
-continue;
+execute(a);
+else
+{
+a = find_env("PATH");
+head = linkpath(r);
+pathname = _which(a[0], head);
 free(buff);
 buff = NULL;
 free(a);
