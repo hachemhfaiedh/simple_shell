@@ -27,6 +27,8 @@ if (lin == -1)
 {
 free(buffer);
 buffer = NULL;
+if (isatty(STDERR_FILENO))
+_print("\n");
 }
 return (buffer);
 }
