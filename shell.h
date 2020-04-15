@@ -11,7 +11,7 @@
 #include <signal.h>
 #include <errno.h>
 
-int _putchar(char c);
+
 int _print(char *str);
 int main(void);
 char *read_line(void);
