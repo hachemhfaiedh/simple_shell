@@ -56,7 +56,7 @@ char **parse_line(char *buffer)
 		i++;
 		token = strtok(NULL, DEL);
 	}
-	if (!token && !(*array))
+	if (token == NULL && *array == NULL)
 	{
 		free(array);
 		free(token);
