@@ -7,7 +7,7 @@
 char *find_env(char *glovar)
 {
 	int i, j;
-	char *a;
+	char *r;
 
 	if (!glovar)
 		return (NULL);
@@ -25,8 +25,8 @@ char *find_env(char *glovar)
 			}
 			if (glovar[j] == '\0')
 			{
-				a = (environ[i] + j + 1);
-				return (a);
+				r = (environ[i] + j + 1);
+				return (r);
 			}
 		}
 	}

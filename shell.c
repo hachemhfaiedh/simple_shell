@@ -1,5 +1,5 @@
 #include "shell.h"
-#define DEL "\n\t\a\r"
+#define DEL "\n\t\a\r\v"
 /**
  * sig - checks if Ctrl C is pressed
  * @sig_num: int
@@ -85,9 +85,7 @@ _print("#cisfun$ ");
 buff = read_line();
 a = parse_line(buff);
 free(buff);
-buff = NULL;
 free(a);
-a = NULL;
 }
 return (0);
 }
