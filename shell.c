@@ -31,7 +31,6 @@ if (isatty(STDERR_FILENO))
 _print("\n");
 exit(0);
 }
-
 return (buffer);
 }
 /**
@@ -51,7 +50,7 @@ char **parse_line(char *buffer)
 		return (NULL);
 	*array = NULL;
 	token = strtok(buffer, DEL);
-	while (token)
+	while (token != NULL)
 	{
 		array[i] = token;
 		i++;
@@ -88,6 +87,7 @@ a = parse_line(buff);
 free(buff);
 buff = NULL;
 free(a);
+a = NULL;
 }
 return (0);
 }
