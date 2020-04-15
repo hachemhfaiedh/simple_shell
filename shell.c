@@ -29,7 +29,6 @@ free(buffer);
 buffer = NULL;
 if (isatty(STDERR_FILENO))
 _print("\n");
-exit(0);
 }
 return (buffer);
 }
@@ -78,9 +77,7 @@ int main(void)
 {
 char **a;
 char *buff = NULL;
-
-signal(SIGINT, sig);
-while (1)
+while (1 && a != EOF)
 {
 if (isatty(0))
 _print("#cisfun$ ");
