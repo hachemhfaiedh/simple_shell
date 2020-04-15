@@ -88,6 +88,7 @@ a = parse_line(buff);
 free(buff);
 buff = NULL;
 free(a);
+a = NULL;
 }
 return (0);
 }
