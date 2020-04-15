@@ -4,20 +4,23 @@
 /**
  *read_line - a funtioch that reads the input line after prompt
  *
- *Return: lin
+ *Return: buffer
  */
-int read_line(void)
+char *read_line(void)
 {
-char *buffer;
+char *buffer = NULL;
 size_t buffsize = 1024;
-int lin;
-buffer = malloc(buffsize);
-if (!buffer)
-exit(EXIT_FAILURE);
+ssize_t  lin;
 lin = getline(&buffer, &buffsize, stdin);
 if (lin == -1)
-exit(EXIT_FAILURE);
-return (lin);
+{
+free(buffer);
+buffer = NULL;
+if (isatty(STDERR_FILENO))
+_print("\n");
+exit(0);
+}
+return (buffer);
 }
 /**
  *parse_line - a function to separate line's tokens
