@@ -19,5 +19,6 @@ char **parse_line(char *);
 extern char **environ;
 char *find_env(char *glovar);
 void sig(int sig_num);
-
+int _stroc(char ch, char *src);
+int _stroc(char ch, char *src);
 #endif

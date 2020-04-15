@@ -35,7 +35,7 @@ if (_stroc(' ', buffer) == _strlen(buffer) - 1)
 {
 free(buffer);
 buffer = NULL;
-return (prompt());
+return (read_line());
 }
 return (buffer);
 }
