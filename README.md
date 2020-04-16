@@ -2,6 +2,17 @@
 
 Simple_shell is a Holberton School project. As the name suggests we created a simple UNIX command interpreter.
 
+# Description
+
+## What is the shell
+The shell is a command line interface program that takes commands from the keyboard and gives them to the operating system to perform.
+## How to compile it
+```bash
+gcc -Wall -Werror -Wextra -pedantic *.c -o hsh
+```
+## How to use it
+./hsh
+
 # Learning Obectives
 
 * Who designed and implemented the original Unix operating system
@@ -20,6 +31,7 @@ Simple_shell is a Holberton School project. As the name suggests we created a si
 * What is EOF / “end-of-file”?
 
 # List of allowed functions and system calls for this project
+
 * access (man 2 access)
 * chdir (man 2 chdir)
 * close (man 2 close)
@@ -58,7 +70,17 @@ You can clone the repository :
 git clone https://github.com/hachemhfaiedh/simple_shell.git
 ```
 then run the executable to start using our version of the shell
-
+```bash
+vagrant@vagrant-ubuntu-trusty-64:~/simple_shell$ gcc -Wall -Wextra -Werror -pedantic *.c -o hsh
+vagrant@vagrant-ubuntu-trusty-64:~/simple_shell$ ./hsh
+#cisfun$ echo Hello, This is an example
+Hello, This is an example
+#cisfun$ ls
+AUTHORS  man_1_simple_shell README.md print.c  shell.c hsh shell.h
+#cisfun$ ^C
+#cisfun$ exit
+vagrant@vagrant-ubuntu-trusty-64:~/simple_shell$
+```
 # Examples of Commands
 
 Command | Description
@@ -67,6 +89,7 @@ ls | lists the current working directory files
 glovar | prints the current environment i.e global variables
 echo | writes text to the STDOUT
 exit | exits the prompt
+
 # Bugs
 No bugs were found during our tests, feel free to contact us about any enquiry.
 # Authors
