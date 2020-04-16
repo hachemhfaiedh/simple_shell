@@ -1,12 +1,14 @@
-.TH SIMPLE_SHELL "15 April 2020" "simple_shell man page"
+.TH SIMPLE_SHELL 1 "15 April 2020" "1.0" "simple_shell man page"
+
 .SH NAME
 .B simple_shell
+- command line interface program
 
 .SH SYNOPSIS
-$ [command] [arguments]
+type ./hsh to execute the shell
 
 .SH DESCRIPTION
-This is a Holberton School team project in which we created a simple UNIX command interpreter.
+The shell is a command line interface (CLI) program that takes commands from the keyboard and gives them to the operating system to perform. This is a Holberton School team project in which we created a simple version of the shell.
 
 .SH BUILT-INS
 .B glovar
