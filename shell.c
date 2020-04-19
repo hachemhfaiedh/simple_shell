@@ -1,5 +1,5 @@
 #include "shell.h"
-#define DEL "\n\t\a\r"
+#define DEL "\n\t\a\r\v"
 /**
  * sig - checks if Ctrl C is pressed
  * @sig_num: int
@@ -42,26 +42,28 @@ return (buffer);
 char **parse_line(char *buffer)
 {
 	char *token;
-	int i = 0;
+	int i = 0, j = 0;
 	char **array;
 
 	array = malloc(sizeof(char *) * 64);
 	if (array == NULL)
-		return (NULL);
-	*array = NULL;
-	token = strtok(buffer, DEL);
-	while (token != NULL)
 	{
-		array[i] = token;
-		i++;
-		token = strtok(NULL, DEL);
+	perror("ERROR: not enough space");
+	return (NULL);
 	}
-	if (token == NULL && *array == NULL)
-	{
-		free(array);
-		free(token);
-		return (NULL);
-	}
+*array = NULL;
+token = strtok(buffer, DEL);
+for (i = 0; token != NULL; i++)
+{
+for (j = 0; j < _strlen(token); j++)
+{
+;
+}
+if (token[j - 1] == '\n')
+token[j - 1] = '\0';
+array[i] = token;
+token = strtok(NULL, DEL);
+}
 	array[i] = NULL;
 	return (array);
 }
@@ -86,8 +88,7 @@ buff = read_line();
 a = parse_line(buff);
 free(buff);
 buff = NULL;
-free(a);
-a = NULL;
+_free(a);
 }
 return (0);
 }
