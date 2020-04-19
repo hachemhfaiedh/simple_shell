@@ -86,7 +86,6 @@ if (isatty(0))
 _print("#cisfun$ ");
 buff = read_line();
 a = parse_line(buff);
-_strcpy(c, a[0]);
 free(buff);
 buff = NULL;
 _free(a);
