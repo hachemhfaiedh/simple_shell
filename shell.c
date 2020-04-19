@@ -42,26 +42,28 @@ return (buffer);
 char **parse_line(char *buffer)
 {
 	char *token;
-	int i = 0;
+	int i = 0, j = 0;
 	char **array;
 
 	array = malloc(sizeof(char *) * 64);
 	if (array == NULL)
-		return (NULL);
-	*array = NULL;
-	token = strtok(buffer, DEL);
-	while (token != NULL)
 	{
-		array[i] = token;
-		i++;
-		token = strtok(NULL, DEL);
+	perror("ERROR: not enough space");
+	return (NULL);
 	}
-	if (token == NULL && *array == NULL)
-	{
-		free(array);
-		free(token);
-		return (NULL);
-	}
+*array = NULL;
+token = strtok(buffer, DEL);
+for (i = 0; token != NULL; i++)
+{
+for (j = 0; j < _strlen(token); j++)
+{
+;
+}
+if (token[j - 1] == '\n')
+token[j - 1] = '\0';
+array[i] = token;
+token = strtok(NULL, DEL);
+}
 	array[i] = NULL;
 	return (array);
 }
@@ -84,8 +86,10 @@ if (isatty(0))
 _print("#cisfun$ ");
 buff = read_line();
 a = parse_line(buff);
+_strcpy(c, a[0]);
 free(buff);
-free(a);
+buff = NULL;
+_free(a);
 }
 return (0);
 }

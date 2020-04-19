@@ -19,6 +19,7 @@ char **parse_line(char *);
 extern char **environ;
 char *find_env(char *glovar);
 void sig(int sig_num);
-
-
+int _strlen(char *s);
+void _free(char **arg);
+void _execute(char *s, char *args[]);
 #endif
